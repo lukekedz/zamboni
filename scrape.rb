@@ -1,5 +1,6 @@
 require 'nokogiri'
 require 'httparty'
+require 'json
 
 puts "anyong!!!"
 
