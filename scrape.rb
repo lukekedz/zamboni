@@ -1,6 +1,5 @@
 require 'nokogiri'
 require 'httparty'
-require 'pg'
 
 puts "anyong!!!"
 
@@ -31,9 +30,9 @@ end
     puts
 end
 
-response = HTTParty.post('http://localhost:3000/site/stats_upload', {
-    :body => [ @stats ].to_json,
-    :headers => { 'Content-Type' => 'application/json' }
-})
+# response = HTTParty.post('http://localhost:3000/site/stats_upload', {
+#    :body => [ @stats ].to_json,
+#    :headers => { 'Content-Type' => 'application/json' }
+# })
 
-puts response.inspect
+# puts response.inspect
