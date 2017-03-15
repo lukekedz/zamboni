@@ -1,8 +1,8 @@
 require 'nokogiri'
 require 'httparty'
-require 'json
+require 'json'
 
-puts "anyong!!!"
+puts "anyong!"
 
 page = HTTParty.get('http://games.espn.com/fhl/standings?leagueId=8266&seasonId=2017')
 
@@ -27,13 +27,22 @@ while i <= 13
 end
 
 @stats.each do |st|
-    puts st.inspect
-    puts
+    # puts st.inspect
+    # puts
 end
 
-# response = HTTParty.post('http://localhost:3000/site/stats_upload', {
-#    :body => [ @stats ].to_json,
-#    :headers => { 'Content-Type' => 'application/json' }
-# })
+email = String.new
+if !@stats.empty?
+	email = 'echo "Scrape successful." | mail -a "From: SPECTRUM UPDATE" -s "Daily Update" psukedz@hotmail.com'
+else
+	email = 'echo "Problem with scrape." | mail -a "From: SPECTRUM UPDATE" -s "Daily Update" psukedz@hotmail.com'
+end
+# exec(email)
 
-# puts response.inspect
+
+response = HTTParty.post('http://spectrumhockey.herokuapp.com/site/stats_upload', {
+    :body => [ @stats ].to_json,
+    :headers => { 'Content-Type' => 'application/json' }
+})
+
+puts response.inspect
