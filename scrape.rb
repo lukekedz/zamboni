@@ -31,6 +31,8 @@ end
     # puts
 end
 
+# email settings on pi
+# http://www.raspberry-projects.com/pi/software_utilities/email/ssmtp-to-send-emails
 email = String.new
 if !@stats.empty?
 	email = 'echo "Scrape successful." | mail -a "From: SPECTRUM UPDATE" -s "Daily Update" psukedz@hotmail.com'
