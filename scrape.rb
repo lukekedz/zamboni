@@ -59,7 +59,7 @@ end
 response = HTTParty.post('http://spectrumhockey.herokuapp.com/site/stats_upload', {
     :body => [ @stats ].to_json,
     :headers => { 'Content-Type' => 'application/json' },
-    :body => { :secret => ARGV[0] }
+    # :body => { :secret => ARGV[0] }
 })
 
 log.info response.inspect
