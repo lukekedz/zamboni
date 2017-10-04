@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
-gem 'nokogiri'
+gem 'rake'
 gem 'httparty'
+gem 'nokogiri'
 gem 'json'
+gem 'whenever'
+gem 'chronic'
+gem 'dotenv-rails'
