@@ -4,8 +4,7 @@ namespace :scrape do
   desc 'Tipping off the scraping process...'
 
   task :the_ice do
-    # ruby 'scrape.rb' + ' ' + ENV['ANYONG']
-    ruby 'scrape.rb'
+    ruby 'scrape.rb' + ' ' + ENV['ANYONG']
   end
 
 end
