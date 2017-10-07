@@ -60,7 +60,7 @@ response = HTTParty.post('http://spectrumhockey.herokuapp.com/site/stats_upload'
 log.info response.inspect
 log.info output.new_line
 
-email_log       = Logger.new('./logger/email.log', 'daily')
+email_log       = Logger.new('./logger/email.txt', 'daily')
 email_log.level = Logger::INFO
 
 email_log.info 'RESPONSE CODE: ' + response.code.to_s

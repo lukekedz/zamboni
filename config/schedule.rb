@@ -3,6 +3,6 @@
 
 set :chronic_options, :hours24 => true
 
-every 1.day, :at => '09:55' do
+every 1.day, :at => '06:15' do
   rake "scrape:the_ice"
 end
